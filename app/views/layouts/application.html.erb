@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>T2T</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!--<script async>(function(s,u,m,o,j,v){j=u.createElement(m);v=u.getElementsByTagName(m)[0];j.async=1;j.src=o;j.dataset.sumoSiteId='f86b10064b84a35b68acd216cfc98a70896b464a85e0185e24d471b11a3e2c88';v.parentNode.insertBefore(j,v)})(window,document,'script','//load.sumo.com/');</script>-->
+
+  <!--Start of Zendesk Chat Script-->
+  <script type="text/javascript">
+  window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+  d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+  _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+  $.src="https://v2.zopim.com/?5a2iZh5DmpMrMxndWopbHCct0XFmdfaj";z.t=+new Date;$.
+  type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+  </script>
+  <!--End of Zendesk Chat Script-->
+
+</head>
+<body>
+
+  <%= render partial: "shared/header" %>
+  <%= render partial: "shared/message" %>
+
+	<main>
+		<div class="container">
+			<%= yield %>
+		</div>
+	</main>
+
+  <%= render partial: "shared/footer" %>
+
+	<script>
+		$(".button-collapse").sideNav();
+		$(".dropdown-button").dropdown();
+	</script>
+
+</body>
+</html>

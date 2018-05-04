@@ -1,0 +1,52 @@
+<header>
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content">
+	  <li><%= link_to "My Profile", edit_user_registration_path %></li>
+	  <li><%= link_to "My Courses", myprojects_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+	</ul>
+
+	<ul id="dropdown2" class="dropdown-content">
+	  <li><%= link_to "My Profile", edit_user_registration_path %></li>
+	  <li><%= link_to "My Courses", myprojects_path %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+	</ul>
+
+	<nav class="teal lighten-1 z-depth-2">
+		<div class="container">
+	    <div class="nav-wrapper">
+	      <a href="http://localhost:3000" class="brand-logo">T2T</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+	      <ul class="right hide-on-med-and-down">
+	        <li><a href="http://localhost:3000/project">Courses</a></li>
+	        <% if(!user_signed_in?) %>
+		        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+		        <li><%= link_to "Login", new_user_session_path %></li>
+		      <% else%>
+		        <!-- Dropdown Trigger -->
+			      <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
+			      	<%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
+			      	<%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+			      </li>
+		      <% end %>
+
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="http://localhost:3000/project">Courses</a></li>
+	        <% if(!user_signed_in?) %>
+		        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+		        <li><%= link_to "Login", new_user_session_path %></li>
+		      <% else%>
+		        <!-- Dropdown Trigger -->
+			      <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown2">
+				      <%= image_tag avatar_url(current_user), class: "circle responsive-img avatar-small" %>&nbsp;
+				      <%= current_user.name %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+				    </li>
+		      <% end %>
+	      </ul>
+	    </div>
+    </div>
+  </nav>
+</header>
